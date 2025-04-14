@@ -1,0 +1,389 @@
+.App {
+    padding: 20px;
+    min-height: 100vh;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.7),
+        rgba(184, 134, 11, 0.2),
+        rgba(255, 255, 255, 0.7)
+    ),
+    url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.page-header {
+    text-align: center;
+    margin: 20px 0 40px;
+    padding: 5px;
+    background: linear-gradient(135deg, rgba(184, 134, 11, 50.1), rgba(179, 144, 31, 0.2));
+    border-radius: 15px;
+    position: relative;
+    ;
+}
+
+.page-header h2, .page-header h4 {
+    font-size: 2.5em;
+    color: #e2dbdb;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.page-header h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, #b8860b, #d4af37);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index:2;
+}
+ select {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 2px solid #eaeaea;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Properties Component Styles */
+.properties-list, .agents-list, .clients-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    background: rgb(38 36 36 / 45%);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.property-card , .agent-card, .client-card{
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    border: 1px solid #eaeaea;
+}
+
+.property-card:hover , .agent-card:hover,.client-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.property-card h3, .agent-card h3,.client-card h3  {
+    background: linear-gradient(135deg, #b8860b, #d4af37);
+    color: white;
+    margin: 0;
+    padding: 20px 25px;
+    font-size: 1.4em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #d4af37;
+}
+
+.property-content, .agent-content, .client-content {
+    padding: 20px;
+    position: relative;
+}
+
+.property-content::before, .agent-content::before, .client-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+    z-index: 0;
+}
+
+form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg');
+    background-size: cover;
+    opacity: 0.45;
+    z-index: 0;
+}
+
+.property-card p,.agent-card p,.client-card p  {
+    position: relative;
+    margin: 12px 0;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+    color: #333;
+    font-weight: 500;
+    border-left: 4px solid #b8860b;
+    z-index: 1;
+}
+
+.property-card button, .agent-card button,.client-card button {
+    position: relative;
+    background: linear-gradient(to right, #ff4444, #ff6b6b);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.property-card button:hover , .agent-card button:hover,.client-card button:hover{
+    background: linear-gradient(to right, #ff6b6b, #ff4444);
+    transform: scale(1.02);
+}
+
+/* Form Styles */
+form {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg');
+    background-size: cover;
+    opacity: 0.45;
+    z-index: 0;
+}
+
+form input {
+    position: relative;
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 2px solid #eaeaea;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+}
+
+form input:focus {
+    border-color: #b8860b;
+    outline: none;
+    box-shadow: 0 0 10px rgba(184, 134, 11, 0.2);
+}
+
+form button {
+    position: relative;
+    background: linear-gradient(135deg, #b8860b, #d4af37);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.9em;
+    margin-top: 5px;
+    padding: 8px;
+    background: rgba(255, 68, 68, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid #ff4444;
+}
+
+.main-nav {
+    background: rgb(38 36 36 / 90%);
+    backdrop-filter: blur(10px);
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-brand {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #b8860b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a {
+    background: linear-gradient(135deg, #b8860b, #d4af37);
+    color: white;
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+}
+
+.nav-links li a:hover {
+    background: linear-gradient(135deg, #e14141, #f59292);
+    color: white;
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+/* Admin css */
+
+.query-component {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #cccccc;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+  }

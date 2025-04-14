@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+}
+
+.laser-cursor {
+  width: 10px;
+  height: 10px;
+  background: #39FF14;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  box-shadow: 0 0 15px #39FF14,
+              0 0 30px #39FF14,
+              0 0 45px #39FF14;
+  transition: transform 0.1s ease;
+}
+
+/* Remove the .laser-trail class and related styles */
+.laser-trail {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #39FF14;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9998;
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+
+/* Keep your existing cursor styles but modify them to work with the laser cursor */
+button:hover ~ .laser-cursor,
+.nav-btn:hover ~ .laser-cursor,
+.explore-btn:hover ~ .laser-cursor,
+a:hover ~ .laser-cursor {
+  width: 15px;
+  height: 15px;
+  background: #39FF14;
+  box-shadow: 0 0 20px #39FF14,
+              0 0 40px #39FF14,
+              0 0 60px #39FF14;
+}
+
+/* Remove cursor inheritance */
+* {
+  cursor: default;
+}
+
+/* Interactive elements */
+button,
+.nav-btn,
+.explore-btn,
+.property-card,
+.agent-card,
+.social-icon,
+.filter-pill,
+.search-btn,
+.contact-btn,
+.view-details-btn,
+.submit-btn,
+a,
+.glass-effect,
+.property-info,
+.agent-info,
+.contact-info {
+  cursor: pointer;
+}
+
+/* Text input elements */
+input, 
+textarea, 
+select {
+  cursor: text;
+}
+
+/* Disabled states */
+*:disabled {
+  cursor: not-allowed;
+}
+
+/* Ensure cursor is visible on text content */
+p, h1, h2, h3, h4, h5, h6, span, div {
+  cursor: default;
+}
+
+/* Add cursor for scrollable content */
+::-webkit-scrollbar {
+  cursor: default;
+}
+
+/* Ensure cursor visibility on all interactive areas */
+[role="button"],
+[tabindex="0"] {
+  cursor: pointer;
+}
+
+
+:root {
+  --primary: #b8860b;
+  --secondary: #1a1a1a;
+  --accent: #d4af37;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --bg-light: #f9f9f9;
+  --bg-dark: #1a1a1a;
+  --transition: all 0.3s ease;
+  --glass-white: rgba(255, 255, 255, 0.95);
+  --glass-dark: rgba(26, 26, 26, 0.95);
+}
+
+/* Common styles for all pages */
+/* Replace this line in your CSS */
+.page-hero {
+  text-align: center;
+  padding: 8rem 2rem 6rem;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+              url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9') center/cover;
+  color: white;
+  margin-bottom: 4rem;
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.page-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
